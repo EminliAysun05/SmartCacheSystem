@@ -1,9 +1,6 @@
-
-using System;
-using Microsoft.EntityFrameworkCore;
-using SmartCacheProject.Domain.Entities;
-using SmartCacheProject.Migrations;
+using SmartCacheProject.Infrastructure.ServiceRegistrations;
 using SmartCacheProject.Migrations.MigrationServiceRegistrations;
+using SmartCacheProject.Persistence.ServiceRegistrations;
 
 
 namespace SmartCacheProject.API;
@@ -17,15 +14,15 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddMigrationDbContext(builder.Configuration);
+        builder.Services.AddPersistenceServices();
+        builder.Services.AddInfrastructureServices(builder.Configuration);
+
         var app = builder.Build();
-         builder.Services.AddMigrationDbContext(builder.Configuration);
-     //   builder.Services.AddDbContext<AppDbContext>(options =>
-     //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-        // Configure the HTTP request pipeline.
+
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -33,12 +30,9 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
-
-
         app.MapControllers();
-
         app.Run();
     }
 }
+

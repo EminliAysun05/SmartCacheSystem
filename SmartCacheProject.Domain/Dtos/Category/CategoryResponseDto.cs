@@ -1,4 +1,4 @@
-﻿namespace SmartCacheProject.Application.Dtos.Category;
+﻿namespace SmartCacheProject.Domain.Dtos.Category;
 
 public class CategoryResponseDto 
 {

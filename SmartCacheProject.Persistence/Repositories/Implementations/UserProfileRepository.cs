@@ -1,10 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using SmartCacheProject.Domain.Entities;
-using SmartCacheProject.Infrastructure.Repositories.Interfaces;
+using SmartCacheProject.Persistence.Repositories.Interfaces;
 using System.Data;
 
-namespace SmartCacheProject.Infrastructure.Repositories;
+namespace SmartCacheProject.Persistence.Repositories;
 
 public class UserProfileRepository : IUserProfileRepository
 {

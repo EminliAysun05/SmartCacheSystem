@@ -1,10 +1,9 @@
-﻿namespace SmartCacheProject.Application.Dtos.UserProfile;
+﻿namespace SmartCacheProject.Domain.Dtos.UserProfile;
 
-public class UserProfileResponseDto
+public class UserProfileUpdateDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string Preferences { get; set; } = null!;
-    public DateTime LastModified { get; set; }
 }

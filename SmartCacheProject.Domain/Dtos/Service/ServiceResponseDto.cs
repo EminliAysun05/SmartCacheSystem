@@ -1,4 +1,4 @@
-﻿namespace SmartCacheProject.Application.Dtos.Service;
+﻿namespace SmartCacheProject.Domain.Dtos.Service;
 
 public class ServiceResponseDto
 {

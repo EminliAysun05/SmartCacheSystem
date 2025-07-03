@@ -1,4 +1,4 @@
-﻿namespace SmartCacheProject.Application.Dtos.UserProfile;
+﻿namespace SmartCacheProject.Domain.Dtos.UserProfile;
 
 public class UserProfileCreateDto
 {

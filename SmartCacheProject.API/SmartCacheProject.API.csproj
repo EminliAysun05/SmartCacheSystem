@@ -21,6 +21,7 @@
     <ProjectReference Include="..\SmartCacheProject.Application\SmartCacheProject.Application.csproj" />
     <ProjectReference Include="..\SmartCacheProject.Domain\SmartCacheProject.Domain.csproj" />
     <ProjectReference Include="..\SmartCacheProject.Migrations\SmartCacheProject.Migrations.csproj" />
+    <ProjectReference Include="..\SmartCacheProject.Persistence\SmartCacheProject.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

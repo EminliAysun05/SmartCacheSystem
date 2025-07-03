@@ -1,6 +1,6 @@
 ﻿using SmartCacheProject.Domain.Entities;
 
-namespace SmartCacheProject.Infrastructure.Repositories.Interfaces;
+namespace SmartCacheProject.Persistence.Repositories.Interfaces;
 
 public interface IUserProfileRepository
 {

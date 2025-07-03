@@ -1,9 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using SmartCacheProject.Domain.Entities;
-using SmartCacheProject.Infrastructure.Repositories.Interfaces;
+using SmartCacheProject.Persistence.Repositories.Interfaces;
 
-namespace SmartCacheProject.Infrastructure.Repositories.Implementations;
+namespace SmartCacheProject.Persistence.Repositories.Implementations;
 
 public class CategoryRepository : ICategoryRepository
 {

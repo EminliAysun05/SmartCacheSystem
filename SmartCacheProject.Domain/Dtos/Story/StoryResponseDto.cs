@@ -1,4 +1,4 @@
-﻿namespace SmartCacheProject.Application.Dtos.Story;
+﻿namespace SmartCacheProject.Domain.Dtos.Story;
 
 public class StoryResponseDto
 {
