@@ -7,9 +7,9 @@ namespace SmartCacheProject.Infrastructure.Caching;
 public class RedisCacheService : IRedisCacheService
 {
     private readonly IDatabase _database;
-    private readonly ConnectionMultiplexer _connectionMultiplexer;
+    private readonly IConnectionMultiplexer _connectionMultiplexer;
 
-    public RedisCacheService(IDatabase database, ConnectionMultiplexer connectionMultiplexer)
+    public RedisCacheService(IDatabase database, IConnectionMultiplexer connectionMultiplexer)
     {
         _database = database;
         _connectionMultiplexer = connectionMultiplexer;

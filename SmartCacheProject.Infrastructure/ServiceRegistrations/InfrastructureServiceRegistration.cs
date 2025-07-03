@@ -20,8 +20,12 @@ public static class InfrastructureServiceRegistration
         });
 
         services.AddScoped<IRedisCacheService, RedisCacheService>();
+        services.AddScoped<IDatabase>(sp =>
+        {
+            var multiplexer = sp.GetRequiredService<IConnectionMultiplexer>();
+            return multiplexer.GetDatabase();
+        });
 
-     
 
         return services;
     }

@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartCacheProject.Domain\SmartCacheProject.Domain.csproj" />
-    <ProjectReference Include="..\SmartCacheProject.Infrastructure\SmartCacheProject.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

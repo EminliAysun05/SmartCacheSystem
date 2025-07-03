@@ -1,7 +1,7 @@
+using SmartCacheProject.Application.ServiceRegistrations;
 using SmartCacheProject.Infrastructure.ServiceRegistrations;
 using SmartCacheProject.Migrations.MigrationServiceRegistrations;
 using SmartCacheProject.Persistence.ServiceRegistrations;
-
 
 namespace SmartCacheProject.API;
 
@@ -11,8 +11,6 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -20,6 +18,7 @@ public class Program
         builder.Services.AddMigrationDbContext(builder.Configuration);
         builder.Services.AddPersistenceServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
+        builder.Services.AddApplicationServices();
 
         var app = builder.Build();
 
