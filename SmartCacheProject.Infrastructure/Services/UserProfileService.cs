@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using SmartCacheProject.Application.Services.Interfaces;
 using SmartCacheProject.Domain.Dtos.UserProfile;
 using SmartCacheProject.Domain.Entities;
@@ -11,9 +12,9 @@ public class UserProfileService : IUserProfileService
     private readonly string _connectionString;
     private readonly IMapper _mapper;
 
-    public UserProfileService(string connectionString, IMapper mapper)
+    public UserProfileService(IConfiguration configuration, IMapper mapper)
     {
-        _connectionString = connectionString;
+        _connectionString = configuration.GetConnectionString("DefaultConnection");
         _mapper = mapper;
     }
 

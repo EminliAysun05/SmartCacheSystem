@@ -1,3 +1,4 @@
+﻿using Microsoft.Data.SqlClient;
 using SmartCacheProject.Application.ServiceRegistrations;
 using SmartCacheProject.Infrastructure.ServiceRegistrations;
 using SmartCacheProject.Migrations.MigrationServiceRegistrations;
@@ -19,9 +20,9 @@ public class Program
         builder.Services.AddPersistenceServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddApplicationServices();
-
+        
         var app = builder.Build();
-
+       
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();

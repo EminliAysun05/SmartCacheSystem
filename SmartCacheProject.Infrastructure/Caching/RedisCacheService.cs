@@ -30,7 +30,7 @@ public class RedisCacheService : IRedisCacheService
 
     }
 
-    public async Task<DateTime?> GetLastModified(string moduleKey)
+    public async Task<DateTime?> GetLastModifiedAsync(string moduleKey)
     {
         string key = GetLastModifiedKey(moduleKey);
         RedisValue redisValue = await _database.StringGetAsync(key);

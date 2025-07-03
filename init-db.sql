@@ -1,0 +1,3 @@
+CREATE DATABASE SmartCacheProjectDb;
+GO
+	

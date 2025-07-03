@@ -8,6 +8,6 @@ public interface IRedisCacheService
     Task SetAsync<T>(string key, T value, TimeSpan? ttl = null);
     Task RemoveAsync(string key);
 
-    Task<DateTime?> GetLastModified(string moduleKey);
+    Task<DateTime?> GetLastModifiedAsync(string moduleKey);
     Task SetLastModified(string moduleKey, DateTime lastModified);
 }

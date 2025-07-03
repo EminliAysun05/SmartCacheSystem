@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using SmartCacheProject.Application.Services.Interfaces;
 using SmartCacheProject.Domain.Dtos.Service;
 using SmartCacheProject.Domain.Entities;
+using SmartCacheProject.Infrastructure.Caching.Interfaces;
 
 namespace SmartCacheProject.Infrastructure.Services;
 
@@ -11,14 +12,17 @@ public class ServiceService : IServiceService
 {
     private readonly string _connectionString;
     private readonly IMapper _mapper;
+    private readonly IRedisCacheService _cacheService;
 
-    public ServiceService(IConfiguration configuration, IMapper mapper)
+    public ServiceService(IConfiguration configuration, IMapper mapper, IRedisCacheService cacheService)
     {
         _connectionString = configuration.GetConnectionString("DefaultConnection")!;
         _mapper = mapper;
+        _cacheService = cacheService;
     }
     public async Task<int> CreateAsync(ServiceCreateDto dto)
     {
+
         using var connection = new SqlConnection(_connectionString);
         var command = new SqlCommand(@"
                 INSERT INTO Services (Name, Description, Price, LastModified, IsActive)
@@ -32,8 +36,9 @@ public class ServiceService : IServiceService
         command.Parameters.AddWithValue("@IsActive", true);
 
         await connection.OpenAsync();
-        var result = await command.ExecuteScalarAsync();
-        return Convert.ToInt32(result);
+        return 0;
+        //var result = await command.ExecuteScalarAsync();
+        //return Convert.ToInt32(result);
     }
 
     public async Task<bool> DeleteAsync(int id)
@@ -49,6 +54,12 @@ public class ServiceService : IServiceService
 
     public async Task<List<ServiceResponseDto>> GetAllAsync()
     {
+        const string cacheKey = "services";
+
+        var cached = await _cacheService.GetAsync<List<ServiceResponseDto>>(cacheKey);
+        if (cached is not null)
+            return cached;
+
         var result = new List<Service>();
         using var connection = new SqlConnection(_connectionString);
         var command = new SqlCommand("SELECT * FROM Services", connection);
@@ -66,7 +77,10 @@ public class ServiceService : IServiceService
                 IsActive = reader.GetBoolean(5)
             });
         }
-        return _mapper.Map<List<ServiceResponseDto>>(result);
+
+        var dtoList = _mapper.Map<List<ServiceResponseDto>>(result);
+        await _cacheService.SetAsync(cacheKey, dtoList);
+        return dtoList;
     }
 
     public async Task<ServiceResponseDto?> GetByIdAsync(int id)
@@ -116,5 +130,5 @@ public class ServiceService : IServiceService
         return affected > 0;
     }
 
-    
+
 }
