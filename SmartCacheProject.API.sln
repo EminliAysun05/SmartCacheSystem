@@ -3,21 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.API", "SmartCacheProject.API\SmartCacheProject.API.csproj", "{654827FF-AB19-47C1-BA6A-15E04EE4957D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.API", "SmartCacheProject.API\SmartCacheProject.API.csproj", "{654827FF-AB19-47C1-BA6A-15E04EE4957D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.Application", "SmartCacheProject.Application\SmartCacheProject.Application.csproj", "{7626C1A2-D5C3-48F3-A6B3-1616EFCA0D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.Application", "SmartCacheProject.Application\SmartCacheProject.Application.csproj", "{7626C1A2-D5C3-48F3-A6B3-1616EFCA0D75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.Domain", "SmartCacheProject.Domain\SmartCacheProject.Domain.csproj", "{0EDCF14C-3D34-420E-9A40-729CCB581A53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.Domain", "SmartCacheProject.Domain\SmartCacheProject.Domain.csproj", "{0EDCF14C-3D34-420E-9A40-729CCB581A53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.Infrastructure", "SmartCacheProject.Infrastructure\SmartCacheProject.Infrastructure.csproj", "{DEC8661B-F114-4B64-8D30-51909BE0B161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.Infrastructure", "SmartCacheProject.Infrastructure\SmartCacheProject.Infrastructure.csproj", "{DEC8661B-F114-4B64-8D30-51909BE0B161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.Persistence", "SmartCacheProject.Persistence\SmartCacheProject.Persistence.csproj", "{3B5BC14C-CE56-4549-A8EB-E7DEAD88B44C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.Persistence", "SmartCacheProject.Persistence\SmartCacheProject.Persistence.csproj", "{3B5BC14C-CE56-4549-A8EB-E7DEAD88B44C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCacheProject.Migrations", "SmartCacheProject.Migrations\SmartCacheProject.Migrations.csproj", "{5C799E61-AD44-48E2-8EC5-ACB153C2C758}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartCacheProject.Migrations", "SmartCacheProject.Migrations\SmartCacheProject.Migrations.csproj", "{5C799E61-AD44-48E2-8EC5-ACB153C2C758}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD20EFE2-F0DD-431C-A085-C12E9BED00B3}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
 Global

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SmartCacheProject.Migrations\SmartCacheProject.Migrations.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
